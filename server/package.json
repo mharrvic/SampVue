@@ -1,29 +1,22 @@
 {
-  "name": "server",
+  "name": "vue-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Vue Server",
+  "main": "server.js",
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'npm run lint && node'",
-    "lint": "./node_modules/.bin/eslint **/*.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.1",
+    "body-parser": "^1.18.2",
     "cors": "^2.8.4",
-    "eslint": "^4.7.2",
-    "express": "^4.15.4",
-    "morgan": "^1.8.2",
-    "nodemon": "^1.12.1"
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "helmet": "^3.9.0",
+    "ip": "^1.1.5"
   },
   "devDependencies": {
-    "eslint-config-google": "^0.9.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "nodemon": "^1.12.1"
   }
 }
