@@ -1,4 +1,5 @@
 ##### Install
+- cd in `server` directory
 - exec `npm install`
 ##### Serve API
 - ###### DEBUG MODE
