@@ -3,8 +3,22 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueRouter from 'vue-router'
+// import Routers from './router.js'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+// import iView from 'iview'
+// import 'iview/dist/styles/iview.css'
 
 Vue.config.productionTip = false
+Vue.use(VueRouter)
+Vue.use(Vuetify)
+// Vue.use(iView)
+
+// const RouterConfig = {
+//   routes: Routers
+// }
+// const router = new VueRouter(RouterConfig)
 
 /* eslint-disable no-new */
 new Vue({
