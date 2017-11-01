@@ -14,8 +14,8 @@ app.use(cors())
 // require('./passport')
 
 require('./routes')(app)
-
-sequelize.sync({force: false})
+// sequelize.sync({force: true}) to clear database
+sequelize.sync()
   .then(() => {
     app.listen(config.port)
     console.log(`Server started on port ${config.port}`)

@@ -4,15 +4,19 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueRouter from 'vue-router'
+import {sync} from 'vuex-router-sync'
 // import Routers from './router.js'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 // import iView from 'iview'
 // import 'iview/dist/styles/iview.css'
+import store from '@/store/store'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.use(Vuetify)
+
+sync(store, router)
 // Vue.use(iView)
 
 // const RouterConfig = {
