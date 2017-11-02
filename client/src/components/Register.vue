@@ -60,7 +60,7 @@ export default {
   methods: {
     async register () {
       try {
-        const response = await AutheticationService.login({
+        const response = await AutheticationService.register({
           email: this.email,
           password: this.password
         })
