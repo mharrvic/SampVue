@@ -1,4 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
+  // assigning database value in sqlite
   const Song = sequelize.define('Song', {
     title: DataTypes.STRING,
     artist: DataTypes.STRING,
