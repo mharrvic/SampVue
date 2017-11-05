@@ -12,5 +12,8 @@ export default {
   // get song id request in api
   show (songId) {
     return Api().get(`songs/${songId}`)
+  },
+  put (song) {
+    return Api().put(`songs/${song.id}`, song)
   }
 }

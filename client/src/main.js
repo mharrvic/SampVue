@@ -11,11 +11,14 @@ import 'vuetify/dist/vuetify.min.css'
 // import iView from 'iview'
 // import 'iview/dist/styles/iview.css'
 import store from '@/store/store'
+import VueYouTubeEmbed from 'vue-youtube-embed' // youtube embed framework
 
 Vue.config.productionTip = false
+
 Vue.use(VueRouter)
 Vue.use(Vuetify)
-
+Vue.use(VueYouTubeEmbed)
+// Vue.use(VueYouTubeEmbed, { global: false }) // if not global
 sync(store, router)
 // Vue.use(iView)
 
