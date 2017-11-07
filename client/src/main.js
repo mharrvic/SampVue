@@ -12,6 +12,7 @@ import 'vuetify/dist/vuetify.min.css'
 // import 'iview/dist/styles/iview.css'
 import store from '@/store/store'
 import VueYouTubeEmbed from 'vue-youtube-embed' // youtube embed framework
+import Panel from '@/components/globals/Panel'
 
 Vue.config.productionTip = false
 
@@ -19,6 +20,8 @@ Vue.use(VueRouter)
 Vue.use(Vuetify)
 Vue.use(VueYouTubeEmbed)
 // Vue.use(VueYouTubeEmbed, { global: false }) // if not global
+Vue.component('panel', Panel)
+
 sync(store, router)
 // Vue.use(iView)
 

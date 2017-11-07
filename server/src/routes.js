@@ -1,6 +1,7 @@
 const AuthenticationController = require('./controllers/AuthenticationController')
 const AuthenticationControllerPolicy = require('./policies/AuthenticationControllerPolicy')
 const SongsController = require('./controllers/SongsController')
+const BookmarksController = require('./controllers/BookmarksController')
 
 // creating Pages navigation
 module.exports = (app) => {
@@ -22,4 +23,7 @@ module.exports = (app) => {
 
   app.post('/songs',
     SongsController.post)
+
+  app.get('/bookmarks',
+    BookmarksController.index)
 }

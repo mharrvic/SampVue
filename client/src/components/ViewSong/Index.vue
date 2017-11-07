@@ -12,12 +12,12 @@
       </v-flex>
     </v-layout>
       <!-- View Tab data -->
-    <v-layout>
-      <v-flex xs6 class="mt-2">
+    <v-layout class="mt-2">
+      <v-flex xs6>
         <tab :song="song" />
       </v-flex>
         <!-- View Song data -->
-      <v-flex xs6 class="ml-2 mt-2">
+      <v-flex xs6 class="ml-2">
         <lyrics :song="song" />
       </v-flex>
     </v-layout>
@@ -30,7 +30,6 @@ import Lyrics from './Lyrics'
 import YouTube from './YouTube'
 import SongMetadata from '@/components/ViewSong/SongMetadata'
 import SongsService from '@/services/SongsService'
-import Panel from '@/components/Panel'
 export default {
   data () {
     return {
@@ -42,7 +41,6 @@ export default {
     this.song = (await SongsService.show(songId)).data
   },
   components: {
-    Panel,
     SongMetadata,
     YouTube,
     Lyrics,

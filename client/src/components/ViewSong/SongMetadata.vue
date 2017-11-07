@@ -15,13 +15,31 @@
               <v-btn
                 dark
                 class="cyan"
-                @click="navigateTo({
+                :to="{
                   name: 'song-edit',
-                  params: {
-                    songId: song.id
+                  params () {
+                    return {
+                      songId: song.id
+                      }
                     }
-                  })">
+                  }">
                   Edit
+                </v-btn>
+
+                <v-btn
+                v-if="isUserLoggedIn && !isBookmarked"
+                dark
+                class="cyan"
+                @click="unbookmark">
+                Bookmark
+                </v-btn>
+
+                <v-btn
+                v-if="isUserLoggedIn && isBookmarked"
+                dark
+                class="cyan"
+                @click="bookmark">
+                Unbookmark
                 </v-btn>
 
               </v-flex>
@@ -35,18 +53,38 @@
 </template>
 
 <script>
-import Panel from '@/components/Panel'
+import {mapState} from 'vuex'
+import BookmarksService from '@/services/BookmarksService'
+
 export default {
   props: [
     'song'
   ],
-  methods: {
-    navigateTo (route) {
-      this.$router.push(route)
+  data () {
+    return {
+      isBookmarked: false
     }
   },
-  components: {
-    Panel
+  computed: {
+    ...mapState([
+      'isUserLoggedIn'
+    ])
+  },
+  async mounted () {
+    const bookmark = (await BookmarksService.index({
+      songId: 1,
+      userId: 1
+    })).data
+    this.isBookmarked = !!bookmark
+    console.log('bookmark', this.isBookmarked)
+  },
+  methods: {
+    bookmark () {
+      console.log('bookmark')
+    },
+    unbookmark () {
+      console.log('unbookmark')
+    }
   }
 }
 </script>

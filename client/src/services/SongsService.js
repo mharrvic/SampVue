@@ -2,8 +2,12 @@ import Api from '@/services/Api'
 
 export default {
   // Get request of songs in api
-  index () {
-    return Api().get('songs')
+  index (search) {
+    return Api().get('songs', {
+      params: {
+        search: search
+      }
+    })
   },
   // song sending Post Request
   post (song) {
